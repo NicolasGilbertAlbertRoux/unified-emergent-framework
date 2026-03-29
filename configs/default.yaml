@@ -1,6 +1,11 @@
-yaml
-betas: [9.0, 13.0, 14.0]
-seeds: [1, 2]
+betas:
+  - 9.0
+  - 13.0
+  - 14.0
+
+seeds:
+  - 1
+  - 2
 
 paths:
   skeleton_detail_dir: "logs/plots_dirac_filament_graph_t41a"
@@ -15,9 +20,15 @@ schrodinger:
 
 dispersion:
   best:
-    "9.0": {alpha: 2.0, beta_pot: 1.0}
-    "13.0": {alpha: 0.5, beta_pot: 1.0}
-    "14.0": {alpha: 2.0, beta_pot: 0.25}
+    "9.0":
+      alpha: 2.0
+      beta_pot: 1.0
+    "13.0":
+      alpha: 0.5
+      beta_pot: 1.0
+    "14.0":
+      alpha: 2.0
+      beta_pot: 0.25
 
 einstein:
   sigma: 1.0
