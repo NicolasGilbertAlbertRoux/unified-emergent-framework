@@ -1,4 +1,4 @@
-```yaml
+yaml
 betas: [9.0, 13.0, 14.0]
 seeds: [1, 2]
 
