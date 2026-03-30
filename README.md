@@ -25,9 +25,9 @@ pip install -r requirements.txt
 
 The pipeline expects precomputed input artifacts generated upstream from the experimental analysis:
 
-- `logs/plots_dirac_filament_graph_t41a/filament_nodes_betaXX.XX_seedY.csv`
-- `logs/plots_dirac_filament_graph_t41a/filament_edges_betaXX.XX_seedY.csv`
-- `logs/plots_flux_collective_t47/collective_density_betaXX.XX_seedY.npy`
+- `logs/filament_graph_inputs/`
+- `logs/collective_density_inputs/`
+- legacy naming from experimental phase
 
 These files are not produced by `main_pipeline.py` itself.
 
