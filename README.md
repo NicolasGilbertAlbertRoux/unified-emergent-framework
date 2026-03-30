@@ -36,8 +36,8 @@ These files are not produced by `main_pipeline.py` itself.
 If the input directories are absent, generate them first with:
 
 ```bash
-python build_filament_graph_inputs.py
-python build_collective_density_inputs.py
+python preprocessing/build_filament_graph_inputs.py
+python preprocessing/build_collective_density_inputs.py
 ```
 
 This will create the required logs/... input structure used by the main unified pipeline.
