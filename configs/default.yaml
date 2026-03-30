@@ -49,5 +49,4 @@ einstein:
   alpha_metric: 1.0
   beta_metric: 0.5
   gamma_source: 0.5
-  eta_source: 0.2  gamma_source: 0.5
   eta_source: 0.2
