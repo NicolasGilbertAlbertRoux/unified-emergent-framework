@@ -8,9 +8,23 @@ seeds:
   - 2
 
 paths:
-  skeleton_detail_dir: "logs/plots_dirac_filament_graph_t41a"
-  mantle_density_dir: "logs/plots_flux_collective_t47"
+  raw_map_dir: "data/raw_maps"
+  filament_graph_dir: "data/filament_graph_inputs"
+  collective_density_dir: "data/collective_density_inputs"
   results_dir: "results"
+
+preprocessing:
+  filament:
+    smooth_sigma: 1.0
+    crit_percentile: 99.0
+    force_rebuild: false
+
+  collective_density:
+    shape: [12, 12, 12, 12]
+    top_k_hubs: 20
+    max_pairs: 120
+    save_images: true
+    force_rebuild: false
 
 schrodinger:
   alpha: 0.5
@@ -35,4 +49,5 @@ einstein:
   alpha_metric: 1.0
   beta_metric: 0.5
   gamma_source: 0.5
+  eta_source: 0.2  gamma_source: 0.5
   eta_source: 0.2
