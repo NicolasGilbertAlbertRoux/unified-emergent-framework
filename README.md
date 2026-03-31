@@ -2,18 +2,36 @@ This repository implements a unified emergent framework connecting transport, qu
 
 # Unified Emergent Framework
 
-Reference implementation for the paper:
+Reference implementation for the manuscript:
 
-**An Emergent Wave-Mantle Framework for Unified Effective Dynamics: From Transport Skeletons to Pre-Dirac, Pre-Maxwell, and Pre-Einstein Sectors**
+**A Computational Framework for Emergent Multi-Sector Physical Structures from Discrete Energy Fields**
+
+---
 
 ## Overview
 
-This repository provides a reproducible implementation of the main numerical pipeline used in the paper. The code is organized into:
+This repository provides a reproducible implementation of a discrete emergent framework connecting:
 
-	- `core/`: shared data loading, graph construction, operators, and utility functions
-	- `physics/`: domain-specific analysis modules
-	- `main_pipeline.py`: entry point running the selected analyses
-	- `configs/`: simple configuration files
+- Schrödinger-like dynamics  
+- Dirac-like spectral structure  
+- Maxwell-like transverse modes  
+- Geometry–source coupling  
+
+The framework operates entirely from discrete scalar fields and graph-derived structures.
+
+---
+
+## Repository structure
+
+core/            # graph construction, operators, utilities
+physics/         # sector-specific analyses
+preprocessing/   # data preparation scripts
+configs/         # configuration files
+data/
+raw_maps/      # included minimal dataset
+main_pipeline.py
+
+---
 
 ## Installation
 
@@ -21,99 +39,89 @@ This repository provides a reproducible implementation of the main numerical pip
 pip install -r requirements.txt
 ```
 
-## Expected input data
+---
 
-The pipeline expects precomputed input artifacts generated upstream from the experimental analysis:
+## Included data
 
-- `logs/filament_graph_inputs/`
-- `logs/collective_density_inputs/`
-- legacy naming from experimental phase
+This repository includes a minimal set of raw input maps in:
 
-These files are not produced by `main_pipeline.py` itself.
+data/raw_maps/
 
-## Upstream preprocessing
+These files are sufficient to reproduce all results presented in the manuscript.
 
-If the input directories are absent, generate them first with:
+They correspond to a curated subset of the full experimental dataset.
+
+---
+
+## Pipeline structure
+
+The full workflow is:
+	1.	Load raw scalar-field maps
+	2.	Extract filament graphs
+	3.	Build collective density fields
+	4.	Run physics sectors:
+	- Schrödinger
+	- Dirac
+	- Maxwell
+	- Einstein
+	- Dispersion analysis
+
+---
+
+## Run everything
+
+```bash
+python main_pipeline.py
+```
+
+---
+
+## Optional preprocessing only
 
 ```bash
 python preprocessing/build_filament_graph_inputs.py
 python preprocessing/build_collective_density_inputs.py
 ```
 
-This will create the required logs/... input structure used by the main unified pipeline.
+---
 
 ## Outputs
 
-Outputs are written to results/ as CSV summaries that can be used to regenerate tables and figures for the paper.
+results/
 
-## Run everything
+Main outputs include:
+	- schrodinger_dynamics_raw.csv
+	- skeleton_hamiltonian_modes.csv
+	- pre_dirac_summary.csv
+	- pre_maxwell_transverse_summary.csv
+	- einstein_source_metric_raw.csv
+	- einstein_source_metric_summary.csv
+	- dispersion_summary.csv
 
-Once the required input files are present:
-
-```bash
-python main_pipeline.py
-```
-
-## Outputs
-
-Outputs are written to results/ as CSV summaries that can be used to regenerate tables and figures for the paper.
-
-The pipeline currently produces:
-	- results/schrodinger/schrodinger_dynamics_raw.csv
-	- results/schrodinger/skeleton_hamiltonian_modes.csv
-	- results/dirac/pre_dirac_summary.csv
-	- results/maxwell/pre_maxwell_transverse_summary.csv
-	- results/einstein/einstein_source_metric_raw.csv
-	- results/einstein/einstein_source_metric_summary.csv
-	- results/dispersion/dispersion_summary.csv (if Hamiltonian modes are available)
+---
 
 ## Reproducibility
 
-The pipeline is deterministic given the input files.
+The pipeline is deterministic given the input data.
 
-Reproducibility therefore consists of two layers:
-	1.	generating or providing the expected upstream input artifacts;
-	2.	running main_pipeline.py on those fixed inputs.
+This repository provides a fully reproducible reference implementation of the analyses presented in the manuscript.
 
-No hidden manual step is required once the input directory structure is present.
+---
 
-## Current status
+## Notes
 
-This repository is designed to mirror the analyses developed in the following stages:
-	- Laplacian spectrum / effective Hamiltonian / Schrödinger sector
-	- dispersion analysis
-	- pre-Dirac sector
-	- pre-Maxwell sector
-	- pre-Einstein mantle geometry, metric, source, and closure
+	- Intermediate files are generated automatically and are not versioned
+	- The included dataset is minimal but sufficient for full reproduction
+	- Larger datasets can be used transparently by replacing data/raw_maps/
+
+---
 
 ## License
 
-This project is released under the MIT License. See the `LICENSE` file for details.
+MIT License
 
 ---
 
 ## Citation
 
-If you use this code or build on this framework, please cite the associated manuscript.
-
-## Notes
-
-This repository provides a reproducible computational implementation of the analyses presented in the paper. It is intended for verification, extension, and critical comparison.# unified-emergent-framework
-	- dispersion analysis
-	- pre-Dirac sector
-	- pre-Maxwell sector
-	- pre-Einstein mantle geometry, metric, source, and closure
-
-## License
-
-This project is released under the MIT License. See the `LICENSE` file for details.
-
----
-
-## Citation
-
-If you use this code or build on this framework, please cite the associated manuscript.
-
-## Notes
-
-This repository provides a reproducible computational implementation of the analyses presented in the paper. It is intended for verification, extension, and critical comparison.# unified-emergent-framework
+If you use this code or build upon this framework, please cite the associated manuscript.
