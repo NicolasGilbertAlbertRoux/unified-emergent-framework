@@ -1,11 +1,36 @@
+# =========================
+# DATA MANAGEMENT
+# =========================
+
+# Keep raw input maps (included in repo)
+!data/raw_maps/
+
+# Ignore generated preprocessing outputs
+data/filament_graph_inputs/
+data/collective_density_inputs/
+
+# Ignore results
+results/
+
+# Ignore logs
+logs/
+
+# =========================
+# PYTHON
+# =========================
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-results/
-logs/
-figures/
-
-.env
+# =========================
+# OS / EDITOR
+# =========================
 .DS_Store
+.vscode/
+.idea/
+
+# =========================
+# JUPYTER (if any)
+# =========================
+.ipynb_checkpoints/
